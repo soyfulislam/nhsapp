@@ -53,7 +53,7 @@ function App() {
   const [perPersonIHSecOT, setPerPersonIHSecOT] = useState(0);
   const [perPersonRHSecOT, setPerPersonRHSecOT] = useState(0);
 
-  //Pathway tracking PP
+  //Patient Cohort Tracking PP
   const [perPersonIHPT, setPerPersonIHPT] = useState(0);
   const [perPersonRHPT, setPerPersonRHPT] = useState(0);
   const [perPersonIHConsPT, setPerPersonIHConsPT] = useState(0);
@@ -118,7 +118,7 @@ function App() {
   const [intialHoursResOT, setIntailHoursResOT] = useState(0);
   const [reducedHoursResOT, setReducedHoursResOT] = useState(0);
 
-  // pathway tracking
+  // Patient Cohort Tracking
   const [intialHoursPT, setIntailHoursPT] = useState(0);
   const [intialHoursConsPT, setIntailHoursConsPT] = useState(0);
   const [intialHoursMdtPT, setIntailHoursMdtPT] = useState(0);
@@ -522,20 +522,20 @@ function App() {
             <h1>Number of Patients</h1>
             <TextField
               style={{ paddingRight: "10px" }}
-              label="New Patients per week"
+              label="New Referrals per week"
               type="number"
               variant="outlined"
               onChange={(e) => setNewPatients(e.target.value)}
             />
             <TextField
-              label="New Patients per MDT"
+              label="Patients at MDT"
               type="number"
               variant="outlined"
               onChange={(e) => setPerMdt(e.target.value)}
             />
           </Grid>
           <Grid item xs={12}>
-            <h2>Referral Triage & Processing</h2>
+            <h2 className="rowHeader">Referral Triage & Processing</h2>
           </Grid>
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={3}>
@@ -545,13 +545,13 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIH(e.target.value)}
                     />
                     <TextField
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRH(e.target.value)}
@@ -584,13 +584,13 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHCons(e.target.value)}
                     />
                     <TextField
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHCons(e.target.value)}
@@ -623,13 +623,13 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMdt(e.target.value)}
                     />
                     <TextField
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMdt(e.target.value)}
@@ -662,13 +662,13 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHSec(e.target.value)}
                     />
                     <TextField
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHSec(e.target.value)}
@@ -730,7 +730,7 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <h2>Requesting Tests</h2>
+            <h2 className="rowHeader">Requesting Tests</h2>
           </Grid>
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={3}>
@@ -740,14 +740,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHOT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHOT(e.target.value)}
@@ -779,14 +779,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHConsOT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHConsOT(e.target.value)}
@@ -818,14 +818,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMdtOT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMdtOT(e.target.value)}
@@ -857,14 +857,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHSecOT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHSecOT(e.target.value)}
@@ -930,7 +930,7 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <h2>Patient Encounter</h2>
+            <h2 className="rowHeader">Patient Consultation</h2>
           </Grid>
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={3}>
@@ -940,14 +940,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHPE(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHPE(e.target.value)}
@@ -979,14 +979,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHConsPE(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHConsPE(e.target.value)}
@@ -1018,14 +1018,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMdtPE(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMdtPE(e.target.value)}
@@ -1057,14 +1057,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHSecPE(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHSecPE(e.target.value)}
@@ -1131,7 +1131,7 @@ function App() {
           </Grid>
 
           <Grid item xs={12}>
-            <h2>Pathway Tracking</h2>
+            <h2 className="rowHeader">Patient Cohort Tracking</h2>
           </Grid>
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={3}>
@@ -1141,14 +1141,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHPT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHPT(e.target.value)}
@@ -1180,14 +1180,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHConsPT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHConsPT(e.target.value)}
@@ -1219,14 +1219,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMdtPT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMdtPT(e.target.value)}
@@ -1258,14 +1258,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHSecPT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHSecPT(e.target.value)}
@@ -1331,7 +1331,7 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <h2>MDT Preparation</h2>
+            <h2 className="rowHeader">MDT Preparation</h2>
           </Grid>
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={3}>
@@ -1341,14 +1341,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMDT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMDT(e.target.value)}
@@ -1380,14 +1380,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHConsMDT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHConsMDT(e.target.value)}
@@ -1419,14 +1419,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHMdtMDT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHMdtMDT(e.target.value)}
@@ -1458,14 +1458,14 @@ function App() {
                   <Grid container item xs={6} spacing={0}>
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per Person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonIHSecMDT(e.target.value)}
                     />
                     <TextField
                       style={{ paddingBottom: "10px" }}
-                      label="Per person"
+                      label="Per Patient"
                       type="number"
                       variant="outlined"
                       onChange={(e) => setPerPersonRHSecMDT(e.target.value)}
@@ -1533,23 +1533,42 @@ function App() {
 
           <Grid container spacing={1} className={classes.grid}>
             <Grid item xs={12}>
-              <h2 style={{ float: "right" }}>Total: £{total.toFixed(2)}</h2>
+              <h2 style={{ float: "right" }}>
+                Total: £
+                {total.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+              </h2>
               <h2 style={{ float: "right", paddingRight: "50px" }}>
-                Potential savings: £{potenialSavingsTotal.toFixed(2)}
+                Potential savings: £
+                {potenialSavingsTotal
+                  .toFixed(2)
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
               </h2>
               <h2 style={{ float: "right", paddingRight: "20px" }}>
-                As-Is: £{BeforeSavingsTotal.toFixed(2)}
+                As-Is: £
+                {BeforeSavingsTotal.toFixed(2).replace(
+                  /(\d)(?=(\d{3})+(?!\d))/g,
+                  "$1,"
+                )}
               </h2>
             </Grid>
             <Grid item xs={12}>
               <h2 style={{ float: "right" }}>
-                Grand Total: £{grandTotal.toFixed(2)}
+                Grand Total (A): £
+                {grandTotal
+                  .toFixed(2)
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
               </h2>
               <h2 style={{ float: "right", paddingRight: "50px" }}>
-                Potential savings Grand Total: £{grandPSTotal.toFixed(2)}
+                Potential savings (A): £
+                {grandPSTotal
+                  .toFixed(2)
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
               </h2>
               <h2 style={{ float: "right", paddingRight: "20px" }}>
-                As-Is Grand Total: £{grandAsiisTotal.toFixed(2)}
+                As-Is(A): £
+                {grandAsiisTotal
+                  .toFixed(2)
+                  .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
               </h2>
             </Grid>
           </Grid>
