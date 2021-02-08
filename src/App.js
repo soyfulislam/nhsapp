@@ -5,6 +5,8 @@ import Container from "@material-ui/core/Container";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { Slider, Grid, Paper } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import { CSVLink } from "react-csv";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -512,6 +514,281 @@ function App() {
       reducedHoursResPE
     );
   });
+
+  const csvData = [
+    ["NHS APP"],
+    ["New referrals per week", newPatients, "Patients at MDT", perMdt],
+    [""],
+    ["Referral Triage & Processing"],
+    [
+      "CNS",
+      "Per Patient",
+      perPersonIH,
+      intialHours,
+      "Per Patient",
+      perPersonRH,
+      reducedHours,
+    ],
+    [
+      "Consultant",
+      "Per Patient",
+      perPersonIHCons,
+      intialHoursCons,
+      "Per Patient",
+      perPersonRHCons,
+      reducedHoursCons,
+    ],
+    [
+      "MDT Coordinator",
+      "Per Patient",
+      perPersonIHMDT,
+      intialHoursMDT,
+      "Per Patient",
+      perPersonRHMDT,
+      reducedHoursMDT,
+    ],
+    [
+      "Other Admin",
+      "Per Patient",
+      perPersonIHSec,
+      intialHoursSec,
+      "Per Patient",
+      perPersonRHSec,
+      reducedHoursSec,
+    ],
+    [
+      "Total:",
+      "As-Is: ",
+      intialHoursRes.toFixed(2),
+      "Total potential savings: ",
+      reducedHoursRes.toFixed(2),
+      "Discount: ",
+      Percentage + "%",
+      "Risk Adjusted benefits: ",
+      result.toFixed(2),
+    ],
+    [""],
+    ["Requesting Tests"],
+    [
+      "CNS",
+      "Per Patient",
+      perPersonIHOT,
+      intialHoursOT,
+      "Per Patient",
+      perPersonRHOT,
+      reducedHoursOT,
+    ],
+    [
+      "Consultant",
+      "Per Patient",
+      perPersonIHConsOT,
+      intialHoursConsOT,
+      "Per Patient",
+      perPersonRHConsOT,
+      reducedHoursConsOT,
+    ],
+    [
+      "MDT Coordinator",
+      "Per Patient",
+      perPersonIHMdtOT,
+      intialHoursMdtOT,
+      "Per Patient",
+      perPersonRHMdtOT,
+      reducedHoursMdtOT,
+    ],
+    [
+      "Other Admin",
+      "Per Patient",
+      perPersonIHSecOT,
+      intialHoursSecOT,
+      "Per Patient",
+      perPersonRHSecOT,
+      reducedHoursSecOT,
+    ],
+    [
+      "Total:",
+      "As-Is: ",
+      intialHoursResOT.toFixed(2),
+      "Total potential savings: ",
+      reducedHoursResOT.toFixed(2),
+      "Discount: ",
+      PercentageOT + "%",
+      "Risk Adjusted benefits: ",
+      resultOT.toFixed(2),
+    ],
+    [""],
+    ["Patient Consultation"],
+    [
+      "CNS",
+      "Per Patient",
+      perPersonIHPE,
+      intialHoursPE,
+      "Per Patient",
+      perPersonRHPE,
+      reducedHoursPE,
+    ],
+    [
+      "Consultant",
+      "Per Patient",
+      perPersonIHConsPE,
+      intialHoursConsPE,
+      "Per Patient",
+      perPersonRHConsPE,
+      reducedHoursConsPE,
+    ],
+    [
+      "MDT Coordinator",
+      "Per Patient",
+      perPersonIHMdtPE,
+      intialHoursMdtPE,
+      "Per Patient",
+      perPersonRHMdtPE,
+      reducedHoursMdtPE,
+    ],
+    [
+      "Other Admin",
+      "Per Patient",
+      perPersonIHSecPE,
+      intialHoursSecPE,
+      "Per Patient",
+      perPersonRHSecPE,
+      reducedHoursSecPE,
+    ],
+    [
+      "Total:",
+      "As-Is: ",
+      intialHoursResPE.toFixed(2),
+      "Total potential savings: ",
+      reducedHoursResPE.toFixed(2),
+      "Discount: ",
+      PercentagePE + "%",
+      "Risk Adjusted benefits: ",
+      resultPE.toFixed(2),
+    ],
+    [""],
+    ["Patient Cohort Tracking"],
+    [
+      "CNS",
+      "Per Patient",
+      perPersonIHPT,
+      intialHoursPT,
+      "Per Patient",
+      perPersonRHPT,
+      reducedHoursPT,
+    ],
+    [
+      "Consultant",
+      "Per Patient",
+      perPersonIHConsPT,
+      intialHoursConsPT,
+      "Per Patient",
+      perPersonRHConsPT,
+      reducedHoursConsPT,
+    ],
+    [
+      "MDT Coordinator",
+      "Per Patient",
+      perPersonIHMdtPT,
+      intialHoursMdtPT,
+      "Per Patient",
+      perPersonRHMdtPT,
+      reducedHoursMdtPT,
+    ],
+    [
+      "Other Admin",
+      "Per Patient",
+      perPersonIHSecPT,
+      intialHoursSecPT,
+      "Per Patient",
+      perPersonRHSecPT,
+      reducedHoursSecPT,
+    ],
+    [
+      "Total:",
+      "As-Is: ",
+      intialHoursResPT.toFixed(2),
+      "Total potential savings: ",
+      reducedHoursResPT.toFixed(2),
+      "Discount: ",
+      PercentagePT + "%",
+      "Risk Adjusted benefits: ",
+      resultPT.toFixed(2),
+    ],
+    [""],
+    ["MDT Preparation"],
+    [
+      "CNS",
+      "Per Patient",
+      perPersonIHMDT,
+      intialHoursMDT,
+      "Per Patient",
+      perPersonRHMDT,
+      reducedHoursMDT,
+    ],
+    [
+      "Consultant",
+      "Per Patient",
+      perPersonIHConsMDT,
+      intialHoursConsMDT,
+      "Per Patient",
+      perPersonRHConsMDT,
+      reducedHoursConsMDT,
+    ],
+    [
+      "MDT Coordinator",
+      "Per Patient",
+      perPersonIHMdtMDT,
+      intialHoursMdtMDT,
+      "Per Patient",
+      perPersonRHMdtMDT,
+      reducedHoursMdtMDT,
+    ],
+    [
+      "Other Admin",
+      "Per Patient",
+      perPersonIHSecMDT,
+      intialHoursSecMDT,
+      "Per Patient",
+      perPersonRHSecMDT,
+      reducedHoursSecMDT,
+    ],
+    [
+      "Total:",
+      "As-Is: ",
+      intialHoursResMDT.toFixed(2),
+      "Total potential savings: ",
+      reducedHoursResMDT.toFixed(2),
+      "Discount: ",
+      PercentageMDT + "%",
+      "Risk Adjusted benefits: ",
+      resultMDT.toFixed(2),
+    ],
+    [""],
+    ["Totals"],
+    ["Total", total.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")],
+    [
+      "Potential total",
+      potenialSavingsTotal.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"),
+    ],
+    [
+      "As-Is",
+      BeforeSavingsTotal.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"),
+    ],
+    [""],
+    ["Totals annually"],
+    [
+      "As-is total(A)",
+      grandAsiisTotal.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"),
+    ],
+    [
+      "Potential total(A)",
+      grandPSTotal.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"),
+    ],
+    [
+      "Grand-total(A)",
+      grandTotal.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"),
+    ],
+  ];
 
   return (
     <>
@@ -1571,6 +1848,11 @@ function App() {
                   .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
               </h2>
             </Grid>
+            <CSVLink data={csvData}>
+              <Button variant="contained" color="primary">
+                Download
+              </Button>
+            </CSVLink>
           </Grid>
         </Grid>
       </Container>
